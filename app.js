@@ -73,6 +73,24 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const toggleButton = item.querySelector('.toggle-answer');
+    const answer = item.querySelector('.answer');
+    const line = item.querySelector('.line');
+
+    toggleButton.addEventListener('click', function () {
+      answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+      toggleButton.innerText = toggleButton.innerText === '▼' ? '▲' : '▼';
+      toggleButton.classList.toggle('active'); 
+      line.style.height = answer.style.display === 'none' ? '0' : '10px'; 
+    });
+  });
+});
+
+
 
 
 
